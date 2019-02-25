@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "repl": "node -e \"let knex = require('./knex/knex.js')\" --experimental-repl-await -i"
   },
   "author": "",
   "license": "ISC",
