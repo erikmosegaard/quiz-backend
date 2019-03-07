@@ -6,7 +6,13 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: './dev.sqlite3'
-    }
+    },
+    migrations: {
+      directory: 'knex/migrations'
+    },
+    seeds: {
+      directory: 'knex/seeds'
+    },
   },
 
   staging: {
@@ -21,8 +27,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: 'knex/migrations'
+    },
+    seeds: {
+      directory: 'knex/seeds'
+    },
   },
 
   production: {
@@ -37,8 +46,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: 'knex/migrations'
+    },
+    seeds: {
+      directory: 'knex/seeds'
+    },
   }
 
 };
