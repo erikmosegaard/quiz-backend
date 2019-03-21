@@ -1,6 +1,7 @@
 
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
+  await knex('user_answer').del()
   await knex('answer').del()
   await knex('question').del()
   await knex('quiz').del()
@@ -36,5 +37,15 @@ exports.seed = async function(knex) {
     {id: 8, question_id: 5, answer: '217 m', is_correct: true},
     {id: 9, question_id: 5, answer: '317 m', is_correct: false},
     {id: 10, question_id: 5, answer: '417 m', is_correct: false},
+  ])
+
+  await knex('user_answer').insert([
+    {id: 1, user_id: 1, answer_id: 1, created_at: Date.now()},
+    {id: 2, user_id: 1, answer_id: 4, created_at: Date.now()},
+    {id: 3, user_id: 1, answer_id: 7, created_at: Date.now()},
+    {id: 4, user_id: 1, answer_id: 8, created_at: Date.now()},
+    {id: 5, user_id: 2, answer_id: 2, created_at: Date.now()},
+    {id: 6, user_id: 2, answer_id: 1, created_at: Date.now()},
+    {id: 7, user_id: 2, answer_id: 10, created_at: Date.now()},
   ])
 };
